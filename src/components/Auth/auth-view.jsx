@@ -1,4 +1,10 @@
 import * as React from 'react';
+
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -18,7 +24,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Outremote
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -43,6 +49,14 @@ const AuthView=({a,signInWithGoogle})=>{
 
   return(
     <ThemeProvider theme={theme}>
+     <AppBar position="fixed">
+        <Toolbar>
+         
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            OutRemote
+          </Typography>
+        </Toolbar>
+      </AppBar>
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
         <Grid
@@ -110,10 +124,7 @@ const AuthView=({a,signInWithGoogle})=>{
               >
                 Sign In 
               </Button>
-              <h4>
-              <hr />
-              or
-              </h4>
+             
               <Button
                 type="submit"
                 fullWidth
