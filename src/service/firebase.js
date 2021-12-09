@@ -1,7 +1,5 @@
 import firebase from 'firebase/app';
-import 'firebase/firestore';
 import 'firebase/auth';
-const settings = {timestampsInSnapshots: true};
 
 const config = {
     apiKey: "AIzaSyC0C4Tj0Vn3gdZpZOeNSeR7g9y0JT4kSvE",
@@ -13,11 +11,14 @@ const config = {
 };
 
 
+// Initialize Firebase 
 const fire = firebase.initializeApp(config);
 
+export const auth = firebase.auth();
 
-firebase.firestore().settings(settings);
+const provider = new firebase.auth.GoogleAuthProvider();
+provider.setCustomParameters({ prompt: 'select_account' });
 
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
-
-export default fire;
+export default fire

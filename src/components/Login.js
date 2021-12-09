@@ -9,7 +9,7 @@ import {
     Label, 
     Input
 } from 'reactstrap';
-import firebase from '../config';
+import firebase from 'firebase';
 
 const Login=()=>{
 
@@ -33,6 +33,7 @@ const Login=()=>{
                 setShowLoading(false);
             } else {
                 const newUser = firebase.database().ref('users/').push();
+                
                 newUser.set(creds);
                 localStorage.setItem('nickname', creds.nickname);
                 history.push('/roomlist');
@@ -44,7 +45,7 @@ const Login=()=>{
 return(
     <div>
     {showLoading &&
-        <Spinner color="primary" />
+        <Spinner color="danger" />
     }
     <div>
         <Form onSubmit={login}>

@@ -1,32 +1,30 @@
-import React from "react";
-import { BrowserRouter as Router,Switch,Route,Redirect,useHistory } from "react-router-dom";
-import Login from './components/Login'
-import RoomList from './components/RoomList'
-import AddRoom from './components/AddRoom'
-import ChatRoom from './components/ChatRoom'
-import SecureRoute from "./components/secureRoute";
+import React,{useState,useEffect} from "react";
+import firebase from "./service/firebase";
+import { BrowserRouter as Router,Switch,Route} from "react-router-dom";
+import {Auth} from './components/Auth'
+import {Chat} from './components/Chat'
+import SecureRoute from "./utils/secureRoute";
 
 
 const App=()=>{
 
-  let location = useHistory();
+    const [user, setUser] = useState(null);
 
+    useEffect(() => {
+      firebase.auth().onAuthStateChanged(user => {
+        setUser(user);
+      })
+    }, [])
+    console.log(user)
   return (
+
     <Router>
         {/* <Redirect to={{pathname:"/roomlist",state:{from:location}}}/> */}
         <Switch>
-          <Route exact path="/login">
-            <Login/>
-          </Route>
-          <SecureRoute path='/roomlist' component={RoomList}>
-            <RoomList/>
-          </SecureRoute>
-          <SecureRoute path = "/addroom" component={AddRoom}>
-             <AddRoom/>
-          </SecureRoute>
-          <SecureRoute path="/chatroom/:room" component={ChatRoom}>
-            <ChatRoom/>
-          </SecureRoute>
+        
+          <Route path="/login" component={Auth}/>
+          <SecureRoute exact path="/" component={Chat} user={user}/>
+        
         </Switch>
       </Router>
   );
