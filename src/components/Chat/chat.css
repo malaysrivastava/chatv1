@@ -1,0 +1,113 @@
+body{
+    background-color: grey!important;
+}
+
+.capp{
+    width: 90%;
+    height: 100%;
+}
+
+.list{
+    background-color: #202225;
+}
+.mess{
+    background-color: #25282D;
+}
+.info{
+    background-color: #202225;
+    width: 25rem;
+    padding: 1rem;
+}
+#filled-search{
+    background-color: #2E3135;
+    padding: 1.2rem;
+    color: aliceblue;
+}
+
+.logs{
+    max-height: 76vh;
+    overflow-x: scroll;
+}
+
+.logs-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow:column wrap;
+    transition:.2s;
+    padding: 1rem;
+}
+.logs-card:hover{
+    background-color: #282B2F;
+    cursor: pointer;
+}
+
+.logs-card
+img{
+    width: 4rem;
+    border-radius: 50%;
+    position: relative;
+    left: -4rem;
+}
+.logs-card
+small{
+    color:#696A6D;
+}
+
+.logs-card
+h5{
+ position: relative;
+ left: -8rem;
+ top: -.3rem;
+ font-size: medium;
+ color: #696A6D;
+}
+
+.logs-card
+b{
+    font-size: 2rem;
+    border-radius: 100%;
+}
+
+.logs-card
+h7{
+    position: absolute;
+    top: 1.5rem;
+    left: 0rem;
+    color: #BEBFC0;
+    font-size: small;
+    width: 5rem;
+    height: 1rem;
+    overflow-x: hidden!important;
+}
+
+.info{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.info
+img{
+    border-radius: 50%;
+    width: 3rem;
+}
+
+.info
+h1{
+    font-size: medium;
+    color: #BEBFC0;
+    position: relative;
+    top: 1rem;
+
+}
+.signout{
+color: #BEBFC0;
+position: relative;
+padding: 3px;
+top: .7rem;
+cursor: pointer;
+}
+.signout:hover{
+    background-color: rgb(83, 84, 85);
+    border-radius: 50%; 
+}
