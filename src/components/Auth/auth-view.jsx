@@ -2,9 +2,6 @@ import * as React from 'react';
 
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -155,9 +152,5 @@ const AuthView=({a,signInWithGoogle})=>{
   );
 };
 
-{/* <div>
-      <h2>{a}</h2>
-      <button className="button" onClick={signInWithGoogle}><i className="fab fa-google"></i>Sign in with google</button>
-    </div> */}
 
 export default AuthView
