@@ -13,7 +13,7 @@ const Auth=()=>{
       firebase.auth().onAuthStateChanged(user => {
         setUser(user);
       })
-    }, [user])
+    }, [])
 
     if(user){
         history.replace('/');
