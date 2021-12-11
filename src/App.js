@@ -4,7 +4,7 @@ import { BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import {Auth} from './components/Auth'
 import {Chat} from './components/Chat'
 import SecureRoute from "./utils/secureRoute";
-
+import {ChatBox} from './components/Chatbox'
 
 const App=()=>{
 
@@ -15,7 +15,6 @@ const App=()=>{
         setUser(user);
       })
     }, [])
-    console.log(user)
   return (
 
     <Router>
@@ -24,7 +23,7 @@ const App=()=>{
         
           <Route path="/login" component={Auth}/>
           <SecureRoute exact path="/" component={Chat} user={user}/>
-        
+          <Route path='/chat/:uId/' exact render={props=> <ChatBox {...props} user={user}/>}/>
         </Switch>
       </Router>
   );

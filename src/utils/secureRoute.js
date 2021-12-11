@@ -3,7 +3,6 @@ import { Redirect, Route } from 'react-router-dom';
 
 const SecureRoute = ({ component: Component,user, ...rest }) => {
 
-
   return (
     <Route
       {...rest}

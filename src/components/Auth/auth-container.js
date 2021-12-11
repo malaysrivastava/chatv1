@@ -3,6 +3,7 @@ import { signInWithGoogle } from '../../service/firebase';
 import AuthView from './auth-view'
 import firebase from '../../service/firebase';
 import { useHistory } from 'react-router-dom';
+import Page from '../../utils/Page'
 
 const Auth=()=>{
     const a = "Auth-container";
@@ -19,8 +20,11 @@ const Auth=()=>{
         history.replace('/');
     }
 
-    return(
+    return(<Page
+      title="Login"
+      >
         <AuthView {...{a,signInWithGoogle}}/>
+        </Page>
     );
     
 };
