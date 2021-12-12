@@ -9,7 +9,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import GroupsSharpIcon from '@mui/icons-material/GroupsSharp';
 import { ChatBox } from "../Chatbox";
 
-const ChatView=({Contact,auth,data})=>{
+const ChatView=({room,Contact,auth,data})=>{
  
   let history = useHistory();
 
@@ -60,6 +60,7 @@ const ChatView=({Contact,auth,data})=>{
                     </Link>
                   )
                 })}
+               
               </Grid>
             </Grid>
           </Grid>
